@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 import process from "node:process";
 import { emitKeypressEvents } from "node:readline";
 
