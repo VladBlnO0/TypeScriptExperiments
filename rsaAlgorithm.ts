@@ -7,11 +7,7 @@ let P = 2,
 let alphabet = "1234567890";
 let N = P * Q;
 
-/**
- * @param {string | any[]} text
- * @param {number} exp
- */
-function enDeCrypt(text, exp) {
+function enDeCrypt(text: string | string[], exp: number) {
   let edList = [];
   for (let i = 0; i < text.length; i++) {
     edList.push(String(Number(text[i]) ** exp % N));
@@ -19,11 +15,7 @@ function enDeCrypt(text, exp) {
   return edList;
 }
 
-/**
- * @param {string} orgTxt
- * @param {string} decTxt
- */
-function checkTxt(orgTxt, decTxt) {
+function checkTxt(orgTxt: string, decTxt: string) {
   if (orgTxt === decTxt) {
     console.log("Good Code\n");
   } else {

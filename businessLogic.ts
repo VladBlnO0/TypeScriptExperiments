@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 
-function validate(balance, amount) {
+function validate(balance: number, amount: number): boolean {
   if (amount <= 0.0) {
     return false;
   }
   return amount <= balance;
 }
 
-function deposit(balance, percentage, years) {
+function deposit(balance: number, percentage: number, years: number): number {
   if (balance <= 0.0 || percentage <= 0.0 || years <= 0) {
     return balance;
   }
-  let interest;
+  let interest: number;
   for (let i = 0; i < years; i++) {
     interest = (balance * percentage) / 100;
     balance += interest;
@@ -19,18 +19,18 @@ function deposit(balance, percentage, years) {
   return Math.round(balance * 100) / 100;
 }
 
-function transaction(senderCard, receiverBalance, amount) {
+function transaction(senderCard: string, receiverBalance: number, amount: number) {
   console.log("Received: " + amount);
   console.log("From: " + senderCard);
   console.log(`Balance now: ${receiverBalance + amount}`);
 }
 
-function getCardNumber() {
+function getCardNumber(): number {
   let num = Math.floor(Math.random() * (999_999_999 - 100_000_000 + 1));
   return String(num).length + 1;
 }
 
-function validateChangeDailyLimit(newLimit, currentLimit) {
+function validateChangeDailyLimit(newLimit: number, currentLimit: number) {
   if (newLimit <= 0) {
     console.log("Limit must not be greater than 0");
     return false;

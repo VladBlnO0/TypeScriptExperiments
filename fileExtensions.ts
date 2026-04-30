@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const fs = require("fs");
-const path = require("path");
-const process = require("process");
+import * as fs from "fs";
+import * as path from "path";
+import * as process from "process";
 
-function format(num) {
-  return String(num).padStart(4, "0");
+function format(number: number): string {
+  return String(number).padStart(4, "0");
 }
 
 let dirPath = process.cwd();
