@@ -1,7 +1,7 @@
 function solution(roman: string): number {
   let res = 0;
 
-  const mp = {
+  const mp: Record<string, number> = {
     I: 1,
     V: 5,
     X: 10,
@@ -11,15 +11,20 @@ function solution(roman: string): number {
     M: 1_000,
   };
 
-  for (let i = 0 as number; i < roman.length - 1; i++) {
-    if (roman[i] !== undefined) {
-      if (roman[i] in mp) {
-        if (mp[roman[i + 1]] > mp[roman[i]]) {
-          res -= mp[roman[i]];
-        } else {
-          res += mp[roman[i]] || 0;
-        }
-      }
+  for (let i = 0; i < roman.length; i++) {
+    const current: string = roman[i]!;
+    const next: string | undefined = roman[i + 1];
+
+    const curVal = mp[current];
+    const nextVal = next ? mp[next] : undefined;
+
+    if (curVal === undefined) continue;
+    if (nextVal === undefined) continue;
+
+    if (nextVal > curVal) {
+      res -= curVal;
+    } else {
+      res += curVal;
     }
   }
 
