@@ -8,11 +8,12 @@ function format(number: number): string {
   return String(number).padStart(4, "0");
 }
 
-let dirPath = process.cwd();
+const dirPath = process.cwd();
 
 let js = 0,
   ts = 0,
   php = 0;
+  
 try {
   const files = fs.readdirSync(dirPath);
   for (const file of files) {

@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-let P = 2,
+const P = 2,
   Q = 11,
   e = 7,
   d = 3;
-let alphabet = "1234567890";
-let N = P * Q;
+const alphabet = "1234567890";
+const N = P * Q;
 
 function enDeCrypt(text: string | string[], exp: number) {
-  let edList = [];
+  const edList = [];
   for (let i = 0; i < text.length; i++) {
     edList.push(String(Number(text[i]) ** exp % N));
   }
@@ -25,16 +25,16 @@ function checkTxt(orgTxt: string, decTxt: string) {
 
 console.log(alphabet);
 console.log(enDeCrypt(alphabet, e).join(" "));
-let res = enDeCrypt(enDeCrypt(alphabet, e), d).join("");
+const res = enDeCrypt(enDeCrypt(alphabet, e), d).join("");
 console.log(res + "\n");
 
 checkTxt(alphabet, res);
 
-alphabet = "2025";
+const newAlphabet = "2025";
 
-console.log(alphabet);
-console.log(enDeCrypt(alphabet, e).join(" "));
-res = enDeCrypt(enDeCrypt(alphabet, e), d).join("");
-console.log(res);
+console.log(newAlphabet);
+console.log(enDeCrypt(newAlphabet, e).join(" "));
+const res2 = enDeCrypt(enDeCrypt(newAlphabet, e), d).join("");
+console.log(res2);
 
-checkTxt(alphabet, res);
+checkTxt(newAlphabet, res2);

@@ -19,7 +19,11 @@ function deposit(balance: number, percentage: number, years: number): number {
   return Math.round(balance * 100) / 100;
 }
 
-function transaction(senderCard: string, receiverBalance: number, amount: number) {
+function transaction(
+  senderCard: string,
+  receiverBalance: number,
+  amount: number,
+) {
   console.log("Received: " + amount);
   console.log("From: " + senderCard);
   console.log(`Balance now: ${receiverBalance + amount}`);
@@ -43,14 +47,14 @@ function validateChangeDailyLimit(newLimit: number, currentLimit: number) {
   return true;
 }
 
-let balance = 1000.0;
-let amount = 250.0;
-let years = 3;
-let newLimit = 40;
-let currentLimit = 20;
+const balance = 1000.0;
+const amount = 250.0;
+const years = 3;
+const newLimit = 40;
+const currentLimit = 20;
 
 console.log(
-  "Transaction valid? " + (validate(balance, amount) ? " Yes" : " No")
+  "Transaction valid? " + (validate(balance, amount) ? " Yes" : " No"),
 );
 
 console.log("New card number: " + getCardNumber());
