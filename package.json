@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/node": "^25.9.1",
     "exceljs": "^3.10.0",
+    "jspdf": "^4.2.1",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
