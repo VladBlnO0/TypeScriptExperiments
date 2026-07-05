@@ -13,7 +13,7 @@ function three(callback?: (n: number) => number) {
 function four(callback?: (n: number) => number) {
   return callback ? callback(4) : 4;
 }
-function five(callback?: (n: number) => number): number {
+function five(callback?: (n: number) => number) {
   return callback ? callback(5) : 5;
 }
 function six(callback?: (n: number) => number) {
