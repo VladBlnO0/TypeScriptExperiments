@@ -30,7 +30,7 @@ function transaction(
 }
 
 function getCardNumber(): number {
-  let num = Math.floor(Math.random() * (999_999_999 - 100_000_000 + 1));
+  const num = Math.floor(Math.random() * (999_999_999 - 100_000_000 + 1));
   return String(num).length + 1;
 }
 
@@ -61,11 +61,11 @@ console.log("New card number: " + getCardNumber());
 
 validateChangeDailyLimit(newLimit, currentLimit);
 
-let ok = validate(balance, amount);
+const ok = validate(balance, amount);
 console.log("Transaction valid? " + (ok ? "Yes" : "No"));
 
-let newBalance = deposit(balance, 2.5, years);
+const newBalance = deposit(balance, 2.5, years);
 console.log("Balance after " + years + " years = " + newBalance);
 
-let str = "4242 4242 4242 4242";
+const str = "4242 4242 4242 4242";
 transaction(str, balance, 10.5);

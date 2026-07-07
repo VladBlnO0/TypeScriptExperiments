@@ -1,8 +1,8 @@
 import * as fs from "node:fs/promises";
 
-let a = 5;
-let b = 7;
-let m = 4096;
+const a = 5;
+const b = 7;
+const m = 4096;
 let y = 4003;
 const n = 8;
 
